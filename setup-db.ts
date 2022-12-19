@@ -1,6 +1,6 @@
 import { pool } from "./src/utils/pool";
-import setup from "./data/setup";
+import { setupServer } from "./data/setup";
 
-setup(pool)
+setupServer(pool)
   .catch((err) => console.error(`*** ${err} ***`))
   .finally(() => process.exit());

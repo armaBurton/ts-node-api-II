@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 
-module.exports = async (pool: any) => {
-  return fs
+export const setupServer = async (pool: any) => {
+  return await fs
     .readFile(`${__dirname}/../sql/setup.sql`, { encoding: "utf-8" })
     .then((sql: any) => pool.query(sql))
     .then(() => console.log("✅ Database setup complete!"))
